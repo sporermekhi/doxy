@@ -11,9 +11,9 @@ ADD deploy.sh /deploy.sh
 ADD start.sh /start.sh
 
 RUN apk update && \
-    apk add --no-cache ca-certificates caddy tor wget && \
+    apk add --no-cache ca-certificates bash caddy tor unzip wget && \
     bash deploy.sh
-    
+
 RUN chmod +x /start.sh
 
 CMD /start.sh
